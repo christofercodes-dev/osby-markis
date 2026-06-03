@@ -1,0 +1,119 @@
+.section {
+    padding: 60px 0;
+    background-color: #ffffff;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    height: 750px;
+  }
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    text-decoration: none;
+    /* Gör kortet till en flex-container för att centrera overlayen om det behövs */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image {
+    position: absolute; /* Fixerar bilden bakom texten */
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    /* CENTRERING HÄR: */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikal centrering */
+    align-items: center;     /* Horisontell centrering */
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.2); 
+    transition: background 0.6s ease;
+    z-index: 2;
+  }
+  
+  .content {
+    text-align: center; /* Centrerar textraderna internt */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    font-family: var(--font-playfair), serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.1;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .description {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 380px;
+    margin-top: 20px;
+    
+    /* Startläge: helt genomskinlig och förskjuten nedåt */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+  }
+  
+  /* Hover-effekter */
+  .card:hover .image {
+    transform: scale(1.08);
+    filter: brightness(0.6);
+  }
+  
+  .card:hover .overlay {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .card:hover .title {
+    /* Lyfter titeln en aning vid hovring för att skapa balans med beskrivningen */
+    transform: translateY(-10px);
+    color: #fff;
+  }
+  
+  .card:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+    color: #fff;
+
+  }
+  
+  @media (max-width: 968px) {
+    .grid { height: auto; grid-template-columns: 1fr; }
+    .card { height: 500px; }
+    .title { font-size: 2.5rem; }
+    .description { 
+      opacity: 1; 
+      transform: translateY(0);
+      font-size: 0.9rem;
+    }
+  }

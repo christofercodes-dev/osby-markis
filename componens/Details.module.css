@@ -1,0 +1,89 @@
+.section {
+    padding: 140px 0;
+    background-color: #ffffff; /* Eller #f5f2ed om du vill ha den varma tonen */
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+  
+  .imageSide {
+    flex: 1;
+    position: relative;
+  }
+  
+  .mainImg {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+  
+  .detailImg {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 10px solid #ffffff; /* Skapar en "ram" som lyfter ut den */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+  
+  .textSide {
+    flex: 1;
+  }
+  
+  .textSide span {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #a39382;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .textSide h2 {
+    font-family: var(--font-playfair), serif;
+    font-size: 3rem;
+    line-height: 1.2;
+    color: #2d2926;
+    margin-bottom: 30px;
+  }
+  
+  .features {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .featureItem {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .featureItem h4 {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2d2926;
+  }
+  
+  .featureItem p {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 968px) {
+    .container { flex-direction: column; gap: 60px; }
+    .detailImg { display: none; } /* Förenkla för mobil */
+  }

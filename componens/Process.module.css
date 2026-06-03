@@ -1,0 +1,123 @@
+.section {
+  /* Använder clamp för att minska padding på mobilen automatiskt */
+  padding: clamp(60px, 10vw, 140px) 0;
+  background-color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(40px, 8vw, 80px);
+}
+
+.header h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.75rem; /* Något mindre på små skärmar */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #a39382;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.step {
+  background: transparent;
+  padding: 20px;
+  position: relative;
+}
+
+/* Snygg siffra som bakgrundsdetalj */
+.number {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(3.5rem, 6vw, 5rem); /* Skalar siffran */
+  color: #DFD3C3;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: 1;
+  opacity: 0.8; /* Gör den lite mjukare */
+}
+
+.stepContent {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px; /* Ger plats åt siffran ovanför */
+}
+
+.stepContent h3 {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #1a1a1a;
+}
+
+.stepContent p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #555;
+  font-weight: 300;
+}
+
+/* --- RESPONSIVITET --- */
+
+@media (max-width: 1024px) {
+  .stepsGrid {
+    gap: 30px;
+  }
+  
+  .step {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 968px) {
+  .stepsGrid {
+    grid-template-columns: 1fr; /* Staplar stegen vertikalt */
+    gap: 50px;
+    max-width: 600px; /* Förhindrar att textraderna blir för långa och svårlästa */
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center; /* Valfritt: centrerar texten på mobil för harmoni */
+  }
+
+  .number {
+    left: 50%;
+    transform: translateX(-50%); /* Centrerar siffran bakom den centrerade texten */
+    top: -30px;
+  }
+
+  .stepContent {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header p {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+  
+  .stepContent h3 {
+    font-size: 1.3rem;
+  }
+}

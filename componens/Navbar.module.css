@@ -1,0 +1,171 @@
+.nav {
+    position: fixed; /* Ändrat till fixed så den följer med vid scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: transparent;
+  }
+  
+  /* Effekt när man scrollar ner */
+  .navScrolled {
+    height: 70px;
+    background-color: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+  }
+  
+  .container {
+    width: 92%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    z-index: 1001;
+    transition: opacity 0.3s ease;
+  }
+  
+  .logo span {
+    font-weight: 300;
+    opacity: 0.7;
+  }
+  
+  .navLinks {
+    display: flex;
+    gap: 3.5rem;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .navLinks a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .navLinks a:hover {
+    opacity: 1;
+  }
+  
+  .cta {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.7rem 1.6rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease !important;
+  }
+  
+  .cta:hover {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border-color: #ffffff;
+  }
+  
+  /* Hamburgare */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .line {
+    width: 26px;
+    height: 1px;
+    background-color: #ffffff;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .burgerActive .line:nth-child(1) {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+  
+  .burgerActive .line:nth-child(2) {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+  
+  /* Mobilmeny */
+  @media (max-width: 968px) {
+    .burger {
+      display: flex;
+    }
+  
+    .navLinks {
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      width: 85%;
+      max-width: 400px;
+      background-color: rgba(26, 26, 26, 0.8);
+      backdrop-filter: blur(10px);
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      transform: translateX(101%);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+  
+    .navActive {
+      transform: translateX(0);
+    }
+  
+    .navLinks a {
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+    }
+
+    .cta {
+      background-color: #C5A47E;
+    }
+
+    .logo {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Overlay / Backdrop */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 999;
+    top: 50px;
+  }
+  
+  .overlayActive {
+    opacity: 1;
+    pointer-events: auto;
+  }

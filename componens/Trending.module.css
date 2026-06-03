@@ -1,0 +1,119 @@
+.section {
+    padding: 120px 0;
+    background-color: #fff;
+    /* En mycket ljus beige */
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+}
+
+.header h2 {
+    font-family: var(--font-playfair), serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #2d2926;
+    margin: 0;
+}
+
+.header p {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #a39382;
+    max-width: 300px;
+    text-align: right;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.trendCard {
+    background: #ffffff;
+    padding: 10px;
+    /* Skapar en "ram" runt bilden */
+    transition: transform 0.4s ease;
+}
+
+.trendCard:hover {
+    /*     transform: translateY(-10px);
+ */
+}
+
+.imageBox {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.imageBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.trendCard:hover img {
+    transform: scale(1.05);
+}
+
+.content {
+    padding: 10px 15px 25px;
+}
+
+.tag {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #a39382;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.content h3 {
+    font-family: var(--font-playfair), serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2d2926;
+}
+
+.content p {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    font-weight: 300;
+}
+
+@media (max-width: 968px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .header p {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
