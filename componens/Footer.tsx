@@ -19,10 +19,10 @@ const Footer = () => {
 
           {/* Kolumn 1 */}
           <div className={styles.column}>
-            <h4>Produkter</h4>
+            <h4>Utforska</h4>
             <ul className={styles.links}>
-              <li><Link href="/exterior">Exteriör</Link></li>
-              <li><Link href="/interior">Interiör</Link></li>
+              <li><Link href="/exterior">Inspiration</Link></li>
+              <li><Link href="/interior">Vår vision</Link></li>
               </ul>
           </div>
 
@@ -56,13 +56,13 @@ const Footer = () => {
 
         <div className={styles.bottom}>
           <div className={styles.copyright}>
-            © 2026 OSBY MARKIS & PERSIENNFABRIK. All rights reserved.
+            © 2026 Osby markis & persiennfabrik. All rights reserved.
           </div>
           
-          <div className={styles.legal}>
+          {/* <div className={styles.legal}>
             <Link href="/privacy">Integritetspolicy</Link>
             <Link href="/cookies">Cookies</Link>
-          </div>
+          </div> */}
 
           <div className={styles.socials}>
             <a href="#">Instagram</a>

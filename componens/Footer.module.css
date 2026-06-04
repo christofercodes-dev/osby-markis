@@ -16,13 +16,23 @@
   grid-template-columns: 1.5fr 0.8fr 0.8fr 1.5fr;
   gap: 40px;
   margin-bottom: 60px;
+  /* VIKTIGT: Tvingar alla kolumner att starta på exakt samma pixel i toppen */
+  align-items: start; 
 }
 
 .brand h2 {
   font-family: var(--font-playfair), serif;
   font-size: 1.7rem;
   font-weight: 400;
-  margin-bottom: 20px;
+  /* Nollställ default-marginaler */
+  margin-top: 0;
+  /* Vi matchar margin-bottom med h4-rubrikerna (25px) */
+  margin-bottom: 25px; 
+  /* Minska radhöjden så att toppen på bokstäverna inte skjuts ner */
+  line-height: 1.1; 
+  /* Optisk justering: Eftersom h2 är större än h4 krävs ofta ett 
+     litet negativt margin-top för att de ska SE raka ut för ögat. */
+  margin-top: -6px; 
 }
 
 .brand p {
@@ -33,12 +43,16 @@
   opacity: 0.9;
 }
 
-.column h4, .contactColumn h4 {
+.column h4, 
+.contactColumn h4 {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 25px;
   font-weight: 600;
+  /* Nollställ marginaler för full kontroll */
+  margin-top: 0;
+  margin-bottom: 25px; 
+  line-height: 1.1;
 }
 
 .links {
@@ -124,10 +138,11 @@
 .legal {
   display: flex;
   gap: 30px;
+  
 }
 
 .legal a, .copyright {
-  font-size: 0.75rem;
+  font-size: 0.55rem;
   color: #fff;
   text-decoration: none;
   opacity: 0.8;
@@ -140,7 +155,7 @@
 
 .socials a {
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border 0.3s;
